@@ -5,11 +5,17 @@ import Section from "./Section";
 import Header from "./Header";
 import Container from "./Container";
 import Main from "./Main";
-import { useState } from "react";
+import { useEffect, useState } from "react";
+
+const initialTasks = () => JSON.parse(localStorage.getItem("tasks")) || [];
 
 function App() {
   const [hideDone, setHideDone] = useState(false);
-  const [tasks, setTasks] = useState([]);
+  const [tasks, setTasks] = useState(initialTasks);
+
+  useEffect(() => {
+    localStorage.setItem("tasks", JSON.stringify(tasks));
+  }, [tasks]);
 
   const toggleHideDone = () => {
     setHideDone((hideDone) => !hideDone);
