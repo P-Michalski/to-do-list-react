@@ -43,10 +43,10 @@ function App() {
   };
 
   const addNewTask = (content) => {
-    if(content.trim() === "") {
+    if (content.trim() === "") {
       return;
     }
-    
+
     setTasks(tasks => [
       ...tasks,
       {

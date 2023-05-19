@@ -1,9 +1,9 @@
-import "./style.css";
+import { Contents } from "./styled";
 
 const Main = ({ children }) => (
-    <main className="main">
+    <Contents>
         {children}
-    </main>
+    </Contents>
 );
 
 export default Main;
