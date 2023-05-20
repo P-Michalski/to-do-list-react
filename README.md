@@ -13,6 +13,7 @@ https://p-michalski.github.io/to-do-list-react/
 - CSS
 - Javascript
 - create-react-app
+- styled components
 
 *Project was made, using BEM convention.*
 
