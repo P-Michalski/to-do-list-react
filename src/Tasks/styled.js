@@ -26,32 +26,30 @@ export const Button = styled.button`
     min-width: 28px;
     min-height: 28px;
     border: none;
+    cursor: pointer;
+    transition: 0.5s ease;
 
     &:focus {
         outline: 2px solid black;
     }
 
-    ${({ first }) => first && css`
+    ${({ toggleDone }) => toggleDone && css`
         margin-right: 10px;
         background-color: ${theme.colors.forestGreen};
         color: ${theme.colors.sugarCane};
-        transition: 0.5s ease;
-
+        
         &:hover {
             background-color: ${theme.colors.brightForestGreen};
-            cursor: pointer;
         }
     `}
 
-    ${({ last }) => last && css`
+    ${({ remove }) => remove && css`
         margin-left: 10px;
         background-color: ${theme.colors.alizarinCrimson};
         color: white;
-        transition: 0.5s ease;
 
         &:hover {
             background-color: ${theme.colors.carnation};
-            cursor: pointer;
         }
     `}
 `;
