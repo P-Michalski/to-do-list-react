@@ -1,5 +1,4 @@
 import styled from "styled-components";
-import { theme } from "../theme";
 
 export const Wrapper = styled.section`
     display: grid;
@@ -14,7 +13,7 @@ export const Header = styled.header`
     background-color: white;
     box-shadow: 0 0 3px 1px #e5e5e5;
 
-    @media (max-width: ${theme.breakpoints.mobile}px) {
+    @media (max-width: ${({ theme }) => theme.breakpoints.mobile}px) {
         grid-template-columns: 1fr;
     }
 `;

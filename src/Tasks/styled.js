@@ -1,5 +1,4 @@
 import styled, { css } from "styled-components";
-import { theme } from "../theme";
 
 export const List = styled.ul`
     background-color: white;
@@ -35,21 +34,21 @@ export const Button = styled.button`
 
     ${({ toggleDone }) => toggleDone && css`
         margin-right: 10px;
-        background-color: ${theme.colors.forestGreen};
-        color: ${theme.colors.sugarCane};
+        background-color: ${({ theme }) => theme.colors.forestGreen};
+        color: ${({ theme }) => theme.colors.sugarCane};
         
         &:hover {
-            background-color: ${theme.colors.brightForestGreen};
+            background-color: ${({ theme }) => theme.colors.brightForestGreen};
         }
     `}
 
     ${({ remove }) => remove && css`
         margin-left: 10px;
-        background-color: ${theme.colors.alizarinCrimson};
+        background-color: ${({ theme }) => theme.colors.alizarinCrimson};
         color: white;
 
         &:hover {
-            background-color: ${theme.colors.carnation};
+            background-color: ${({ theme }) => theme.colors.carnation};
         }
     `}
 `;

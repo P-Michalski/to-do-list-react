@@ -1,5 +1,4 @@
 import styled from "styled-components";
-import { theme } from "../theme";
 
 export const StyledButtons = styled.div`
     display: flex;
@@ -7,22 +6,22 @@ export const StyledButtons = styled.div`
 `;
 
 export const Button = styled.button`
-    color: ${theme.colors.teal};
+    color: ${({ theme }) => theme.colors.teal};
     border: none;
     background-color: transparent;
     margin: 0 10px;
     transition: 0.5s ease;
 
     &:hover {
-        color: ${theme.colors.bondiBlue};
+        color: ${({ theme }) => theme.colors.bondiBlue};
         cursor: pointer;
     }
 
     &:disabled {
-        color: ${theme.colors.silver};
+        color: ${({ theme }) => theme.colors.silver};
     }
 
-    @media (max-width: ${theme.breakpoints.mobile}px) {
+    @media (max-width: ${({ theme }) => theme.breakpoints.mobile}px) {
         flex-basis: 100%;
         margin-bottom: 20px;
     }
