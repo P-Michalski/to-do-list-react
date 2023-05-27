@@ -14,6 +14,7 @@ https://p-michalski.github.io/to-do-list-react/
 - Javascript
 - create-react-app
 - styled components
+- Redux
 
 # Getting Started with Create React App
 
