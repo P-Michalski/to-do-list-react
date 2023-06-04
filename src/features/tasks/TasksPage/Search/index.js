@@ -1,23 +1,17 @@
 import InputBox from "../../InputBox";
-import { useLocation, useHistory } from "react-router-dom";
-import { Wrapper } from "../../InputBox/styled";
+import { Wrapper } from "../../../../common/Wrapper/styled";
 import searchQueryParamName from "../searchQueryParamName";
+import { useReplaceQueryParameter, useQueryParameter } from "../queryParameters";
 
-export default () => {
-    const location = useLocation();
-    const history = useHistory();
-    const query = (new URLSearchParams(location.search)).get(searchQueryParamName);
+const Search = () => {
+    const query = useQueryParameter(searchQueryParamName);
+    const replaceQueryParameter = useReplaceQueryParameter();
 
     const onInputChange = ({ target }) => {
-        const searchParams = new URLSearchParams(location.search);
-
-        if (target.value.trim() === "") {
-            searchParams.delete(searchQueryParamName);
-        } else {
-            searchParams.set(searchQueryParamName, target.value);
-        }
-
-        history.push(`${location.pathname}?${searchParams.toString()}`);
+        replaceQueryParameter({
+            key: searchQueryParamName,
+            value: target.value.trim() !== "" ? target.value : undefined,
+        });
     };
     return (
         <Wrapper>
@@ -30,3 +24,5 @@ export default () => {
     );
 
 };
+
+export default Search;
