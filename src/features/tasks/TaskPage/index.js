@@ -17,7 +17,7 @@ function TaskPage() {
             <Main>
                 <Section
                     title={task ? task.content : "Nie znaleziono takiego zadania"}
-                    body={!!task && (
+                    body={task && (
                         <Wrapper>
                             <strong>Ukończono:</strong> {task.done ? "Tak" : "Nie"}
                         </Wrapper>
